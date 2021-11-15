@@ -35,8 +35,6 @@ export default function MenuAppBar() {
             </p>
           </Typography>
 
-          <TextField id="outlined-basic" label="Search" variant="standard" />
-
           {auth && (
             <div>
               <IconButton

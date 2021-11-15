@@ -1,22 +1,38 @@
-import { Button, createStyles } from "@mui/material";
+import { Button } from "@mui/material";
+import { styled } from "@mui/system";
 import React from "react";
 
-const usdeStyles = createStyles({
-  root: {
-    background: "blue",
+const ButtonWrapper = styled("div")({
+  margin: "1rem 0 1rem 1rem",
+
+  button: {
+    minWidth: "100px",
+    color: "#606060",
+    borderRadius: "30px",
+    background: "#fff",
+    fontWeight: "bold",
+    textTransform: "capitalize",
+    padding: "8px 1.4rem",
+
+    "&:hover": {
+      background: "#fff",
+    },
+
+    img: {
+      width: "30px",
+      marginRight: "10px",
+    },
   },
 });
 
-function AddNewButton() {
-  const classes = usdeStyles();
-
+function AddNewButton({ ...rest }) {
   return (
-    <div className={classes.root}>
-      <Button variant="contained">
+    <ButtonWrapper>
+      <Button variant="contained" {...rest}>
         <img src="/add-icon.svg" alt="" />
         <span>New</span>
       </Button>
-    </div>
+    </ButtonWrapper>
   );
 }
 

@@ -18,6 +18,7 @@ import {
 } from "@mui/icons-material";
 import styled from "@mui/styled-engine";
 import AddNewButton from "./AddNewButton";
+import DropdownMenu from "./DropdownMenu";
 
 const SidebarWrapper = styled("div")({
   minHeight: "100vh",
@@ -59,9 +60,7 @@ function Sidebar() {
   return (
     <SidebarWrapper>
       <List>
-        <ListItem>
-          <AddNewButton />
-        </ListItem>
+        <DropdownMenu TriggerButton={AddNewButton} />
 
         <ListItem
           onClick={() => setSelectedItem(0)}
@@ -78,7 +77,7 @@ function Sidebar() {
 
         {/* collapsibel menu for my drive item */}
         <Collapse in={open} timeout="auto" unmountOnExit>
-          <List component="div">
+          <List component="li">
             <ListItemButton sx={{ pl: 4 }}>
               <ListItemIcon>
                 <StarBorder />
