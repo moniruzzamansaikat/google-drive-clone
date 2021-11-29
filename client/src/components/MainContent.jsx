@@ -1,16 +1,18 @@
-import React from "react";
-import { Button, Divider, Paper } from "@mui/material";
-import { ArrowDropDown } from "@mui/icons-material";
-import { styled } from "@mui/system";
-import DropdownMenu from "./DropdownMenu";
+import React from 'react';
+import { Button, Divider, Paper } from '@mui/material';
+import { ArrowDropDown } from '@mui/icons-material';
+import { styled } from '@mui/system';
+import DropdownMenu from './DropdownMenu';
+import Folders from './Folders/Folders';
+import FolderOptions from './Folders/FolderOptions';
 
-const MainContentWrapper = styled("div")({
-  padding: "1rem",
+const MainContentWrapper = styled('div')({
+  padding: '1rem',
 
-  ".placeholder_text": {
-    textAlign: "center",
-    fontSize: "1.8rem",
-    fontWeight: "500",
+  '.placeholder_text': {
+    textAlign: 'center',
+    fontSize: '1.8rem',
+    fontWeight: '500',
   },
 });
 
@@ -28,12 +30,12 @@ function MainContent() {
   return (
     <MainContentWrapper>
       <Paper
-        style={{ padding: "1rem", minHeight: "100vh" }}
+        style={{ padding: '1rem', minHeight: '100vh' }}
         onContextMenu={handleRightClick}
       >
         <DropdownMenu TriggerButton={TriggerButton} />
         <Divider />
-        <p className="placeholder_text">A place for all of your files...</p>
+        <Folders />
       </Paper>
     </MainContentWrapper>
   );
